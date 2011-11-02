@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+		<sql-type jdbc-type="INTEGER" hibernate-type="int"
+			not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="VARCHAR" hibernate-type="string"
+			length="100" not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="LONGVARCHAR" hibernate-type="string"
+			length="65535" not-null="true">
+		</sql-type>
+		<sql-type jdbc-type="TIMESTAMP" hibernate-type="timestamp"
+			length="19" not-null="true">
+		</sql-type>
+	</type-mapping>
+	<table-filter match-schema="PortalUser" match-name=".*"></table-filter>
+	<table-filter match-name="VO" match-catalog="PortalUser"></table-filter>
+	<table catalog="PortalUser" name="VO">
+		<column name="idVO"></column>
+		<column name="VO"></column>
+		<column name="Host"></column>
+		<column name="Description"></column>
+		<column name="VoManagerMail"></column>
+		<column name="EnrollementURL"></column>
+		<column name="Discipline"></column>
+		<column name="Long_Discipline"></column>
+		<column name="Insert_Time"></column>
+		<column name="AUP"></column>
+	</table>
+</hibernate-reverse-engineering>
