@@ -21,7 +21,7 @@ public class VoServiceImpl implements VoService {
 
 	@Transactional
 	public List<Vo> getAllVo() {
-		log.debug("getting all Vo instance");
+		log.info("getting all Vo instance");
 		return voDAO.getAllVo();
 	}
 

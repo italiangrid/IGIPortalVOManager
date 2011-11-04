@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.liferay.maven.archetypes</groupId>
@@ -8,8 +10,8 @@
 	<name>VO-manager-portlet Portlet</name>
 	<version>0.1</version>
 	<properties>
-		<liferay.auto.deploy.dir>../bundles/liferay-portal-6.0.2/deploy</liferay.auto.deploy.dir>
-		<liferay.version>6.0.2</liferay.version>
+		<liferay.auto.deploy.dir>/Users/dmichelotto/Sities/liferay-portal-6.0.5/deploy</liferay.auto.deploy.dir>
+		<liferay.version>6.0.5</liferay.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <axis-version>1.4</axis-version>

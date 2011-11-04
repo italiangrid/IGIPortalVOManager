@@ -36,6 +36,7 @@ public class Vo implements java.io.Serializable {
 
 	public Vo() {
 	}
+	
 
 	public Vo(String vo, String host, String description, String discipline,
 			String middleware, Date insertTime, String aup) {
