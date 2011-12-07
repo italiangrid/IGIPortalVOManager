@@ -99,7 +99,7 @@ div.function {
 	type="java.util.List<portal.vomanager.domain.Vo>" scope="request" />
 
 <liferay-ui:search-container
-	emptyResultsMessage="Non ci sono utenti iscritti" delta="20">
+	emptyResultsMessage="Non ci sono VO con questo nome" delta="20">
 	<liferay-ui:search-container-results>
 		<%
 			results = ListUtil.subList(vos, searchContainer.getStart(),
