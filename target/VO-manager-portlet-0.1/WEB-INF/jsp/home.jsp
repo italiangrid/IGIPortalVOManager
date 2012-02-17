@@ -135,8 +135,6 @@ div.function {
 		</liferay-ui:search-container-column-text>
 		<liferay-ui:search-container-column-text name="Middleware"
 			property="middleware" />
-			<liferay-ui:search-container-column-text name="Insert Time"
-						property="insertTime" />
 		<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-action.jsp" align="right" />
 	</liferay-ui:search-container-row>
