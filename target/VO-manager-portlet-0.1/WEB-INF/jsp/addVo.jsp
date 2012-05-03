@@ -31,7 +31,7 @@
 
 <br/><br/>
 
-<aui:form name="addVoForm" commandName="vo" method="post"
+<aui:form name="addVoForm" commandName="vo"
 			action="${addVoActionUrl}">
 
 			<aui:layout>

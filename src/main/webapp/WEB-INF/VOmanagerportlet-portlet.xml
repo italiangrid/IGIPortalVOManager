@@ -29,12 +29,12 @@
 	
 	<!-- Load Hibernate related configuration -->
 	<import resource="hibernate-context.xml" />
-	<!-- 
-	<bean id="validator"
+	
+	<!-- <bean id="validator"
 		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 	<bean id="myValidator"
-		class="portal.registration.controller.MyValidator" />
-	 -->	
+		class="portal.registration.util.MyValidator" />
+	 -->
 	<bean
 		class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="webBindingInitializer">

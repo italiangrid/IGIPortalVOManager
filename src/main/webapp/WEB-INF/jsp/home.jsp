@@ -83,7 +83,7 @@ div.function {
 	<portlet:param name="myaction" value="addVoForm" />
 </portlet:renderURL>
 
-<aui:form name="addVO" method="post"
+<aui:form name="addVO"
 	action="${addVOForm}">
 	<aui:layout>
 		<aui:button-row align="right">
@@ -147,7 +147,7 @@ div.function {
 	<portlet:param name="myaction" value="updateVo" />
 </portlet:actionURL>
 
-<aui:form name="searchVO" method="post"
+<aui:form name="searchVO"
 	action="${updateVOActionUrl}">
 	<aui:layout>
 		<aui:button type="submit" value="Update VO" inlineField="true"/>
