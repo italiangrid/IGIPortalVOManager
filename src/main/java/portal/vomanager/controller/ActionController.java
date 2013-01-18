@@ -85,5 +85,31 @@ public class ActionController {
 		SessionMessages.add(request, "vo-deleted-successufully");
 		
 	}
+	
+	@ActionMapping(params="myaction=configuredVo")
+	public void configuredVo(@RequestParam int idVo, ActionRequest request){
+		
+		VosController.setSearch(request.getParameter(""));
+		Vo vo = voService.findById(idVo);
+		
+		vo.setConfigured("true");
+		
+		voService.editVo(vo);
+		SessionMessages.add(request, "db-updated-successufully");
+		
+	}
+	
+	@ActionMapping(params="myaction=notConfiguredVo")
+	public void notConfiguredVo(@RequestParam int idVo, ActionRequest request){
+		
+		VosController.setSearch(request.getParameter(""));
+		Vo vo = voService.findById(idVo);
+		
+		vo.setConfigured("false");
+		
+		voService.editVo(vo);
+		SessionMessages.add(request, "db-updated-successufully");
+		
+	}
 
 }

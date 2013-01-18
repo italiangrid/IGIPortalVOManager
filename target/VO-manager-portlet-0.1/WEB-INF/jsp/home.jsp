@@ -135,8 +135,16 @@ div.function {
 		</liferay-ui:search-container-column-text>
 		<liferay-ui:search-container-column-text name="Middleware"
 			property="middleware" />
+		<liferay-ui:search-container-column-text name="Configured"
+			property="configured" />
+		<c:if test="$vo.configured=='false'">
 		<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-action.jsp" align="right" />
+		</c:if>
+		<c:if test="$vo.configured=='true'">
+		<liferay-ui:search-container-column-jsp
+					path="/WEB-INF/jsp/admin-action-not-configured.jsp" align="right" />
+		</c:if>
 	</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>

@@ -1,6 +1,6 @@
 package portal.vomanager.domain;
 
-// Generated 17-lug-2011 17.06.55 by Hibernate Tools 3.4.0.CR1
+// Generated 23-gen-2012 12.27.05 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -22,7 +22,7 @@ public class Vo implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -6395110094925525216L;
+	private static final long serialVersionUID = 7141843908911661031L;
 	private int idVo;
 	private String vo;
 	private String host;
@@ -33,13 +33,13 @@ public class Vo implements java.io.Serializable {
 	private String middleware;
 	private Date insertTime;
 	private String aup;
+	private String configured;
 
 	public Vo() {
 	}
-	
 
 	public Vo(String vo, String host, String description, String discipline,
-			String middleware, Date insertTime, String aup) {
+			String middleware, Date insertTime, String aup, String configured) {
 		this.vo = vo;
 		this.host = host;
 		this.description = description;
@@ -47,11 +47,12 @@ public class Vo implements java.io.Serializable {
 		this.middleware = middleware;
 		this.insertTime = insertTime;
 		this.aup = aup;
+		this.configured = configured;
 	}
 
 	public Vo(String vo, String host, String description, String voManagerMail,
 			String enrollementUrl, String discipline, String middleware,
-			Date insertTime, String aup) {
+			Date insertTime, String aup, String configured) {
 		this.vo = vo;
 		this.host = host;
 		this.description = description;
@@ -61,6 +62,7 @@ public class Vo implements java.io.Serializable {
 		this.middleware = middleware;
 		this.insertTime = insertTime;
 		this.aup = aup;
+		this.configured = configured;
 	}
 
 	@Id
@@ -74,7 +76,7 @@ public class Vo implements java.io.Serializable {
 		this.idVo = idVo;
 	}
 
-	@Column(name = "VO", nullable = false, length = 30)
+	@Column(name = "VO", nullable = false, length = 100)
 	public String getVo() {
 		return this.vo;
 	}
@@ -128,7 +130,7 @@ public class Vo implements java.io.Serializable {
 		this.discipline = discipline;
 	}
 
-	@Column(name = "Middleware", nullable = false, length = 10)
+	@Column(name = "Middleware", nullable = false, length = 7)
 	public String getMiddleware() {
 		return this.middleware;
 	}
@@ -154,6 +156,15 @@ public class Vo implements java.io.Serializable {
 
 	public void setAup(String aup) {
 		this.aup = aup;
+	}
+	
+	@Column(name = "configured", nullable = false, length = 6)
+	public String getConfigured() {
+		return this.configured;
+	}
+
+	public void setConfigured(String configured) {
+		this.configured = configured;
 	}
 
 }

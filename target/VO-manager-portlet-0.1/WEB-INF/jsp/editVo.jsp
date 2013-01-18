@@ -55,6 +55,7 @@
 								value="<%=vo.getDiscipline() %>" label="Disciplina" />
 							<aui:input name="middleware" type="text" style="width: 300px;"
 								value="<%=vo.getMiddleware() %>" label="Tipo Middleware" />
+							<aui:input name="configured" type="checkbox" value="<%=vo.getConfigured() %>"/>
 
 						</aui:fieldset>
 					</aui:column>

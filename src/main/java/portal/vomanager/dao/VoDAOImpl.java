@@ -90,6 +90,7 @@ public class VoDAOImpl implements VoDAO {
 		existingVo.setMiddleware(vo.getMiddleware());
 		existingVo.setVo(vo.getVo());
 		existingVo.setVoManagerMail(vo.getVoManagerMail());
+		existingVo.setConfigured(vo.getConfigured());
 		
 
 		// Save updates
