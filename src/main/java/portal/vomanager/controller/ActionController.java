@@ -95,6 +95,9 @@ public class ActionController {
 		vo.setConfigured("true");
 		
 		voService.editVo(vo);
+		
+		
+		
 		SessionMessages.add(request, "db-updated-successufully");
 		
 	}
