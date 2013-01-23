@@ -96,7 +96,7 @@ div.function {
 </div>
 <div id="tabella">
 <jsp:useBean id="vos"
-	type="java.util.List<portal.vomanager.domain.Vo>" scope="request" />
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request" />
 
 <liferay-ui:search-container
 	emptyResultsMessage="Non ci sono VO con questo nome" delta="20">
@@ -137,11 +137,11 @@ div.function {
 			property="middleware" />
 		<liferay-ui:search-container-column-text name="Configured"
 			property="configured" />
-		<c:if test="$vo.configured=='false'">
+		<c:if test="${vo.configured=='false' }">
 		<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-action.jsp" align="right" />
 		</c:if>
-		<c:if test="$vo.configured=='true'">
+		<c:if test="${vo.configured=='true' }">
 		<liferay-ui:search-container-column-jsp
 					path="/WEB-INF/jsp/admin-action-not-configured.jsp" align="right" />
 		</c:if>

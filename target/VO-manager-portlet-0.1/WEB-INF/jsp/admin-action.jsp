@@ -21,7 +21,7 @@
 	<portlet:param name="myaction" value="configuredVo" /> 
 	<portlet:param name="idVo" value="<%= primKey %>" />
 </portlet:actionURL>
-<liferay-ui:icon image="edit" message="Edit" url="${configuredURL}" />
+<liferay-ui:icon image="edit" message="Set Configured" url="${configuredURL}" />
 
 
 <portlet:actionURL var="deleteURL">

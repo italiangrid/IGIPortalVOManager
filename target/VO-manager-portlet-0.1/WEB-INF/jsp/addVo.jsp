@@ -7,7 +7,7 @@
 	<portlet:param name="myaction" value="vos" />
 </portlet:renderURL>
 
-<jsp:useBean id="vo" type="portal.vomanager.domain.Vo"
+<jsp:useBean id="vo" type="it.italiangrid.portal.dbapi.domain.Vo"
 	scope="request" />
 
 <liferay-ui:error key="vo-name-required"

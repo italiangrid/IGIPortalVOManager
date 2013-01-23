@@ -22,8 +22,8 @@ import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 
 import portal.vomanager.util.MyValidator;
-import portal.vomanager.domain.Vo;
-import portal.vomanager.service.VoService;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.VoService;
 
 
 
@@ -57,7 +57,7 @@ public class ActionController {
 			
 			vo.setInsertTime(oggi);
 		
-			voService.editVo(vo);
+			voService.save(vo);
 			
 			VosController.setSearch(request.getParameter(""));
 			
@@ -94,7 +94,7 @@ public class ActionController {
 		
 		vo.setConfigured("true");
 		
-		voService.editVo(vo);
+		voService.save(vo);
 		
 		
 		
@@ -110,7 +110,7 @@ public class ActionController {
 		
 		vo.setConfigured("false");
 		
-		voService.editVo(vo);
+		voService.save(vo);
 		SessionMessages.add(request, "db-updated-successufully");
 		
 	}

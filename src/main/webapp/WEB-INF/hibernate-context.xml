@@ -29,7 +29,7 @@
 				 p:configLocation="${hibernate.config}" >
 		<property name="annotatedClasses">
      <list>
-       <value>portal.vomanager.domain.Vo</value>
+       <value>it.italiangrid.portal.dbapi.domain.Vo</value>
      </list>
    </property> 
 	</bean>

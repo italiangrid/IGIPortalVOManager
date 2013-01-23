@@ -20,8 +20,8 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 
-import portal.vomanager.domain.Vo;
-import portal.vomanager.service.VoService;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.VoService;
 import portal.vomanager.util.MyValidator;
 
 @Controller("addController")
@@ -54,7 +54,7 @@ public class AddController {
 			
 			vo.setInsertTime(oggi);
 		
-			voService.addVo(vo);
+			voService.save(vo);
 			
 			VosController.setSearch(request.getParameter(""));
 			
