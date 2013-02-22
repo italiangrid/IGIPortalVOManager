@@ -113,7 +113,7 @@ div.function {
 
 	</liferay-ui:search-container-results>
 	<liferay-ui:search-container-row
-		className="portal.vomanager.domain.Vo" keyProperty="idVo"
+		className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 		modelVar="vo">
 		<liferay-ui:search-container-column-text name="VO Name"
 			property="vo" />

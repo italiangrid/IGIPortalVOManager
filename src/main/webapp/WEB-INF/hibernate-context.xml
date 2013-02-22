@@ -29,7 +29,12 @@
 				 p:configLocation="${hibernate.config}" >
 		<property name="annotatedClasses">
      <list>
+       <value>it.italiangrid.portal.dbapi.domain.UserInfo</value>
+       <value>it.italiangrid.portal.dbapi.domain.Idp</value>
        <value>it.italiangrid.portal.dbapi.domain.Vo</value>
+       <value>it.italiangrid.portal.dbapi.domain.UserToVo</value>
+       <value>it.italiangrid.portal.dbapi.domain.Certificate</value>
+       <value>it.italiangrid.portal.dbapi.domain.Notify</value>
      </list>
    </property> 
 	</bean>
