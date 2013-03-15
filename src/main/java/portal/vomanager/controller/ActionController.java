@@ -8,7 +8,6 @@ import java.util.List;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,8 +37,6 @@ import it.italiangrid.portal.dbapi.services.VoService;
 @RequestMapping(value = "VIEW")
 @SessionAttributes("vo")
 public class ActionController {
-	
-	private static final Logger log = Logger.getLogger(ActionController.class);
 	
 	@Autowired
 	private VoService voService;
@@ -109,9 +106,6 @@ public class ActionController {
 		voService.save(vo);
 		
 		List<UserInfo> users = userToVoService.findUserByVo(vo);
-		
-		if(users == null)
-			log.error("nooooooo");
 		
 		
 		try {
