@@ -3,6 +3,7 @@ package portal.vomanager.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -21,9 +22,14 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.servlet.SessionErrors;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 
+import portal.vomanager.exception.VomanagerException;
 import portal.vomanager.util.MyValidator;
-import portal.vomanager.domain.Vo;
-import portal.vomanager.service.VoService;
+import portal.vomanager.util.SendMail;
+import portal.vomanager.util.VomanagerConfig;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
+import it.italiangrid.portal.dbapi.domain.Vo;
+import it.italiangrid.portal.dbapi.services.UserToVoService;
+import it.italiangrid.portal.dbapi.services.VoService;
 
 
 
@@ -34,6 +40,9 @@ public class ActionController {
 	
 	@Autowired
 	private VoService voService;
+	
+	@Autowired
+	private UserToVoService userToVoService;
 	
 	@RenderMapping(params = "myaction=editVoForm")
 	public String showEditUserInfoForm() {
@@ -57,7 +66,7 @@ public class ActionController {
 			
 			vo.setInsertTime(oggi);
 		
-			voService.editVo(vo);
+			voService.save(vo);
 			
 			VosController.setSearch(request.getParameter(""));
 			
@@ -94,9 +103,22 @@ public class ActionController {
 		
 		vo.setConfigured("true");
 		
-		voService.editVo(vo);
+		voService.save(vo);
+		
+		List<UserInfo> users = userToVoService.findUserByVo(vo);
 		
 		
+		try {
+			for(UserInfo userInfo: users){
+				String text = VomanagerConfig.getProperties("Vomanager.properties", "mail").replaceAll("##NL##", "\n").replaceAll("##VO##", vo.getVo()).replaceAll("##HOST##", VomanagerConfig.getProperties("Vomanager.properties", "home.url")).replaceAll("##USER##", userInfo.getFirstName());
+				
+				SendMail sm = new SendMail(VomanagerConfig.getProperties("Vomanager.properties", "igiportal.mail"), userInfo.getMail(), VomanagerConfig.getProperties("Vomanager.properties", "mail.subject").replaceAll("##VO##", vo.getVo()) , text);
+				sm.send();
+			}
+		} catch (VomanagerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		SessionMessages.add(request, "db-updated-successufully");
 		
@@ -110,7 +132,7 @@ public class ActionController {
 		
 		vo.setConfigured("false");
 		
-		voService.editVo(vo);
+		voService.save(vo);
 		SessionMessages.add(request, "db-updated-successufully");
 		
 	}

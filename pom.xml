@@ -326,6 +326,11 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.5</version>
 		</dependency>
+		<dependency>
+	    	<groupId>it.italiangrid.portal</groupId>
+	    	<artifactId>db-api</artifactId>
+	    	<version>0.0.1</version>
+	    </dependency>
 	</dependencies>
 	
 </project>

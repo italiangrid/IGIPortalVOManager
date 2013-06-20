@@ -4,7 +4,7 @@ import java.util.List;
 
 //import org.apache.log4j.Logger;
 
-import portal.vomanager.domain.Vo;
+import it.italiangrid.portal.dbapi.domain.Vo;
 
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.Validator;

@@ -96,7 +96,7 @@ div.function {
 </div>
 <div id="tabella">
 <jsp:useBean id="vos"
-	type="java.util.List<portal.vomanager.domain.Vo>" scope="request" />
+	type="java.util.List<it.italiangrid.portal.dbapi.domain.Vo>" scope="request" />
 
 <liferay-ui:search-container
 	emptyResultsMessage="Non ci sono VO con questo nome" delta="20">
@@ -113,7 +113,7 @@ div.function {
 
 	</liferay-ui:search-container-results>
 	<liferay-ui:search-container-row
-		className="portal.vomanager.domain.Vo" keyProperty="idVo"
+		className="it.italiangrid.portal.dbapi.domain.Vo" keyProperty="idVo"
 		modelVar="vo">
 		<liferay-ui:search-container-column-text name="VO Name"
 			property="vo" />
